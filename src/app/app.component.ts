@@ -10,6 +10,8 @@ import { Models } from "./models"
 export class AppComponent {
 	title = 'TP1';
 
+	artists : string[] = ["benjamin franklin", "ning ye", "maxime pelletier", "fluff fur", "idfk", "hellooooo"]
+
 	constructor() {
 
 	}
