@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { Models } from "./models"
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.sass']
 })
+
 export class AppComponent {
-  title = 'Semaine2';
+	title = 'TP1';
+
+	constructor() {
+
+	}
 }
