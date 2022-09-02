@@ -1,8 +1,16 @@
 export module Models {
+	export class Artist {
+		constructor(
+			public title	: string,
+			public thumb_url	: string,
+			public songs	: Song[]
+		) {}
+	}
+
 	export class Song {
 		constructor(
 			public title	: string,
-			public artist	: string
+			public artist	: Artist
 		) {}
 	}
 

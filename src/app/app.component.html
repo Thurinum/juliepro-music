@@ -7,52 +7,14 @@
 <main>
 	<h2>Our Artists</h2>
 
-	<app-artist-card *ngFor="let artist of artists" [name]="artist"></app-artist-card>
-</main>
+	<aside>
+		<h3>Search</h3>
+		<div>
+			<input type="text" placeholder="Search for artist..." />
+		</div>
+	</aside>
 
-<header>
-	<img src="./assets/logo.png" alt="JuliePro's logo">
-	<h1>JuliePro&trade; Music</h1>
-	<h2>Explore your potential. Discover the JuliePro&trade; signature collection.</h2>
-
-	<header>
-		<img src="./assets/logo.png" alt="JuliePro's logo">
-		<h1>JuliePro&trade; Music</h1>
-		<h2>Explore your potential. Discover the JuliePro&trade; signature collection.</h2>
-	</header>
-
-	<main>
-		<h2>Our Artists</h2>
-
-		<header>
-			<img src="./assets/logo.png" alt="JuliePro's logo">
-			<h1>JuliePro&trade; Music</h1>
-			<h2>Explore your potential. Discover the JuliePro&trade; signature collection.</h2>
-		</header>
-
-		<main>
-			<h2>Our Artists</h2>
-
-			<app-artist-card *ngFor="let artist of artists" [name]="artist"></app-artist-card>
-		</main>
-
-		<header>
-			<img src="./assets/logo.png" alt="JuliePro's logo">
-			<h1>JuliePro&trade; Music</h1>
-			<h2>Explore your potential. Discover the JuliePro&trade; signature collection.</h2>
-		</header>
-
-		<main>
-			<h2>Our Artists</h2>
-
-			<app-artist-card *ngFor="let artist of artists" [name]="artist"></app-artist-card>
-		</main>
+	<section>
 		<app-artist-card *ngFor="let artist of artists" [name]="artist"></app-artist-card>
-	</main>
-</header>
-
-<main>
-	<h2>Our Artists</h2>
-
-	<app-artist-card *ngFor="let artist of artists" [name]="artist"></app-artist-card>
+	</section>
 </main>

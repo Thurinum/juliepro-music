@@ -1,14 +1,21 @@
+@import "../_variables"
+
 header
-	height: 10vh
+	height: $h-header
 	padding: 7px
+
 	display: flex
 	align-items: center
 	justify-content: space-between
 
-	font-size: 1ex
+	position: sticky
+	left: 0
+	top: 0
+
+	font-size: 2ex
 	border:
-		left:  solid 5px goldenrod
-		right: solid 5px goldenrod
+		left:  solid 5px $base
+		right: solid 5px $base
 	background-color: #eee
 	box-shadow: 0 3px 3px #ccc
 
@@ -20,4 +27,51 @@ header
 		text-align: right
 
 main
-	padding: 10px
+	height: 100vh - $h-header
+	padding: $spacing
+	display: grid
+	gap: $spacing
+
+	h2
+		grid-area: 1 / span 2
+
+		padding: 10px
+		border-radius: 5px
+
+		display: flex
+		align-items: bottom
+		justify-content: center
+
+		background-color: #ccc
+		box-shadow: 0 2px 10px #ccc
+		border-bottom: solid 5px $base
+
+	aside
+		width: 25vw
+		background-color: #eee
+		border-radius: 5px
+		box-shadow: 0 2px 10px #ccc
+
+		h3
+			margin-bottom: $spacing
+			padding: $spacing
+			border-bottom: solid 3px $base
+			border-radius: 5px
+			box-shadow: 0 4px 5px -3px $base
+			background-color: #ddd
+
+		div
+			padding: $spacing
+
+			input
+				width: calc(100% - $spacing)
+
+	section
+		height: 95%
+
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-evenly
+		overflow: auto
+		gap: $spacing
+

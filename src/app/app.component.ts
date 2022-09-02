@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Models } from "./models"
+import { Models } from "../models"
 
 @Component({
 	selector: 'app-root',
@@ -10,7 +10,7 @@ import { Models } from "./models"
 export class AppComponent {
 	title = 'TP1';
 
-	artists : string[] = ["benjamin franklin", "ning ye", "maxime pelletier", "fluff fur", "idfk", "hellooooo"]
+	artists : string[] = ["benjamin franklin", "ning ye", "maxime pelletier", "fluff fur", "idfk", "hellooooo", "benjamin franklin", "ning ye", "maxime pelletier", "fluff fur", "idfk", "hellooooo"]
 
 	constructor() {
 
