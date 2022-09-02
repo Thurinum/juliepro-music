@@ -10,11 +10,12 @@
 	<aside>
 		<h3>Search</h3>
 		<div>
-			<input type="text" placeholder="Search for artist..." />
+			<input type="text" placeholder="Search for artist..." [(ngModel)]="query"  />
+			<button (click)="getArtist(query)">Search</button>
 		</div>
 	</aside>
 
 	<section>
-		<app-artist-card *ngFor="let artist of artists" [name]="artist"></app-artist-card>
+		<app-artist-card *ngFor="let album of albums" [album]="album" (click)="getSongs(album)"></app-artist-card>
 	</section>
 </main>

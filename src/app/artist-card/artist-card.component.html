@@ -1,9 +1,7 @@
 <article>
+	<img src="{{album?.thumb_url}}" alt="Image of album {{album?.name}}"  onerror="this.src = 'https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png'">
 	<header>
-		{{name}}
+		<marquee truespeed scrollDelay="50" behavior="alternate">{{album?.name}}</marquee>
+		<small>{{album?.playcount}}+ plays</small>
 	</header>
-
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius deserunt molestias, officiis quaerat ex. Dolorem asperiores dicta sequi corrupti, qui, ab laudantium inventore sit totam perspiciatis saepe, doloribus corporis?
-	</p>
 </article>

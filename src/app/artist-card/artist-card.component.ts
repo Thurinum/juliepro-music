@@ -1,5 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { TitleStrategy } from '@angular/router';
+import { Models } from "../../models"
 
 @Component({
 	selector: 'app-artist-card',
@@ -8,5 +8,5 @@ import { TitleStrategy } from '@angular/router';
 })
 export class ArtistCardComponent {
 	@Input()
-	name?: string;
+	album?: Models.Album
 }
