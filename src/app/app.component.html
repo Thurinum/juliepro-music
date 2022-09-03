@@ -13,9 +13,18 @@
 			<input type="text" placeholder="Search for artist..." [(ngModel)]="query" />
 			<button (click)="getArtist(query)">Search</button>
 		</div>
+
+		<hr />
+
+		<h3>Tracks</h3>
+		<div>
+			<ul>
+				<li *ngFor="let track of currentTracks">{{track}}</li>
+			</ul>
+		</div>
 	</aside>
 
 	<section>
-		<app-artist-card *ngFor="let album of albums" [album]="album" (click)="getSongs(album)"></app-artist-card>
+		<app-artist-card *ngFor="let album of currentAlbums" [album]="album" (click)="getSongs(album)"></app-artist-card>
 	</section>
 </main>

@@ -7,13 +7,12 @@ import { Models } from "../models"
 	styleUrls: ['./app.component.sass']
 })
 
-
 export class AppComponent {
-	query?: string
+	query?: string;
 	readonly API_KEY: string = "9a8a3facebbccaf363bb9fd68fa37abf";
 
-	albums: Models.Album[] = []
-	currentTracks: string[] = []
+	currentAlbums: Models.Album[] = [];
+	currentTracks: string[] 	= [];
 
 	constructor() { }
 
@@ -21,16 +20,17 @@ export class AppComponent {
 		fetch(`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&album=${album?.name}&autocorrect=1&artist=${album?.artist}&api_key=${this.API_KEY}&format=json`)
 			.then(data => data.json())
 			.then(songdata => {
-				if (!songdata) {
-					alert("The song doesn't exist. Wtff");
+				const tracks = songdata?.album?.tracks?.track;
+				
+				if (!tracks || tracks.name) {
+					this.currentTracks = ["This author's tracks are unavailable."];
 					return;
-				}
-
+				}				
+				
 				this.currentTracks = [];
-
-				songdata["album"]["tracks"].forEach((elem: any) => {
-					this.currentTracks.push(elem["name"]);
-				});
+				
+				for (const track of tracks)
+					this.currentTracks.push(track.name);
 			});
 	}
 
@@ -51,7 +51,7 @@ export class AppComponent {
 				fetch(`http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&autocorrect=1&artist=${name}&api_key=${this.API_KEY}&format=json`)
 					.then(data => data.json())
 					.then(albumdata => {
-						this.albums = [];
+						this.currentAlbums = [];
 
 						albumdata["topalbums"]["album"].forEach((elem: any) => {
 							const album = new Models.Album(
@@ -61,7 +61,7 @@ export class AppComponent {
 								elem["playcount"]
 							);
 
-							this.albums.push(album);
+							this.currentAlbums.push(album);
 						});
 					});
 			});
