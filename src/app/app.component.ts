@@ -51,8 +51,6 @@ export class AppComponent {
 				fetch(`http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&autocorrect=1&artist=${name}&api_key=${this.API_KEY}&format=json`)
 					.then(data => data.json())
 					.then(albumdata => {
-						console.log(albumdata["topalbums"]["album"])
-
 						this.albums = [];
 
 						albumdata["topalbums"]["album"].forEach((elem: any) => {
