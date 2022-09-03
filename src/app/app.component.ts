@@ -10,12 +10,12 @@ import { Models } from "../models"
 
 export class AppComponent {
 	query?: string
-	readonly API_KEY : string = "9a8a3facebbccaf363bb9fd68fa37abf";
+	readonly API_KEY: string = "9a8a3facebbccaf363bb9fd68fa37abf";
 
 	albums: Models.Album[] = []
 	currentTracks: string[] = []
 
-	constructor() {}
+	constructor() { }
 
 	getSongs(album?: Models.Album): void {
 		fetch(`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&album=${album?.name}&autocorrect=1&artist=${album?.artist}&api_key=${this.API_KEY}&format=json`)
@@ -49,23 +49,23 @@ export class AppComponent {
 				}
 
 				fetch(`http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&autocorrect=1&artist=${name}&api_key=${this.API_KEY}&format=json`)
-				.then(data => data.json())
-				.then(albumdata => {
-					console.log(albumdata["topalbums"]["album"])
+					.then(data => data.json())
+					.then(albumdata => {
+						console.log(albumdata["topalbums"]["album"])
 
-					this.albums = [];
+						this.albums = [];
 
-					albumdata["topalbums"]["album"].forEach((elem: any )=> {
-						const album = new Models.Album(
-							elem["name"],
-							elem["artist"]["name"],
-							elem["image"][3]["#text"],
-							elem["playcount"]
-						);
+						albumdata["topalbums"]["album"].forEach((elem: any) => {
+							const album = new Models.Album(
+								elem["name"],
+								elem["artist"]["name"],
+								elem["image"][3]["#text"],
+								elem["playcount"]
+							);
 
-						this.albums.push(album);
+							this.albums.push(album);
+						});
 					});
-				});
 			});
 	}
 }
