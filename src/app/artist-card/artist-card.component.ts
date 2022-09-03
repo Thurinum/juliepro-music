@@ -1,5 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { Models } from "../../models"
+import { Album } from "../../models/album"
 
 @Component({
 	selector: 'app-artist-card',
@@ -8,5 +8,5 @@ import { Models } from "../../models"
 })
 export class ArtistCardComponent {
 	@Input()
-	album?: Models.Album
+	album?: Album
 }

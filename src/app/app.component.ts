@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Models } from "../models"
+import { Album } from "../models/album"
 
 @Component({
 	selector: 'app-root',
@@ -11,12 +11,12 @@ export class AppComponent {
 	query?: string;
 	readonly API_KEY: string = "9a8a3facebbccaf363bb9fd68fa37abf";
 
-	currentAlbums: Models.Album[] = [];
+	currentAlbums: Album[] = [];
 	currentTracks: string[] 	= [];
 
 	constructor() { }
 
-	getSongs(album?: Models.Album): void {
+	getSongs(album?: Album): void {
 		fetch(`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&album=${album?.name}&autocorrect=1&artist=${album?.artist}&api_key=${this.API_KEY}&format=json`)
 			.then(data => data.json())
 			.then(songdata => {
@@ -57,7 +57,7 @@ export class AppComponent {
 							if (elem.name === "(null)")
 								return;
 
-							const album = new Models.Album(
+							const album = new Album(
 								elem.name,
 								elem.artist.name,
 								elem.image[3]["#text"],
@@ -68,7 +68,7 @@ export class AppComponent {
 						});
 
 						if (Math.random() < 0.1 || name.includes("minem"))
-							this.currentAlbums.unshift(new Models.Album(
+							this.currentAlbums.unshift(new Album(
 								"4N6", "Maxime Pelletier",
 								"https://raw.githubusercontent.com/departement-info-cem/departement-info-cem.github.io/master/data/photos/mp.png", 66666
 							));
