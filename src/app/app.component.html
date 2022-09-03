@@ -25,6 +25,6 @@
 	</aside>
 
 	<section>
-		<app-artist-card *ngFor="let album of currentAlbums" [album]="album" (click)="getSongs(album)"></app-artist-card>
+		<app-artist-card *ngFor="let album of currentAlbums" [album]="album" (click)="getTracks(album)"></app-artist-card>
 	</section>
 </main>
