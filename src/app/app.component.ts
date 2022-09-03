@@ -54,15 +54,20 @@ export class AppComponent {
 						this.currentAlbums = [];
 
 						albumdata["topalbums"]["album"].forEach((elem: any) => {
+							if (elem.name === "(null)")
+								return;
+
 							const album = new Models.Album(
-								elem["name"],
-								elem["artist"]["name"],
-								elem["image"][3]["#text"],
-								elem["playcount"]
+								elem.name,
+								elem.artist.name,
+								elem.image[3]["#text"],
+								elem.playcount
 							);
 
 							this.currentAlbums.push(album);
 						});
+
+						
 					});
 			});
 	}
