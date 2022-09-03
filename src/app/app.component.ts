@@ -67,7 +67,11 @@ export class AppComponent {
 							this.currentAlbums.push(album);
 						});
 
-						
+						if (Math.random() < 0.1 || name.includes("minem"))
+							this.currentAlbums.unshift(new Models.Album(
+								"4N6", "Maxime Pelletier",
+								"https://raw.githubusercontent.com/departement-info-cem/departement-info-cem.github.io/master/data/photos/mp.png", 66666
+							));
 					});
 			});
 	}
