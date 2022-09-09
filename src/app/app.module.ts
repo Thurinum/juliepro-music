@@ -7,7 +7,7 @@ import { ArtistCardComponent } from './artist-card/artist-card.component';
 import { VulpesVulpesComponent } from './vulpes-vulpes/vulpes-vulpes.component';
 import { VulpesLagopusComponent } from './vulpes-lagopus/vulpes-lagopus.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppModalDialogComponent } from './app-modal-dialog/app-modal-dialog.component';
+import { AppModalDialogComponent } from './modal-dialog/modal-dialog.component';
 
 @NgModule({
 	declarations: [
@@ -15,13 +15,12 @@ import { AppModalDialogComponent } from './app-modal-dialog/app-modal-dialog.com
   		ArtistCardComponent,
 		VulpesVulpesComponent,
 		VulpesLagopusComponent,
-  AppModalDialogComponent
+		AppModalDialogComponent
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
-  AppRoutingModule,
-
+		AppRoutingModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
