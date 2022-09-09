@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Album } from "../models/album"
+import { VulpesVulpesComponent } from './vulpes-vulpes/vulpes-vulpes.component';
+import { VulpesLagopusComponent } from './vulpes-lagopus/vulpes-lagopus.component';
 
 @Component({
 	selector: 'app-root',
@@ -17,7 +19,7 @@ export class AppComponent {
 	readonly API_KEY: string = "9a8a3facebbccaf363bb9fd68fa37abf";
 
 	/**
-	 * La requête utilisateur actuelle. 
+	 * La requête utilisateur actuelle.
 	 * Cette valeur est un two-way-binding avec le champ de recherche.
 	 *
 	 * @type {string}
@@ -103,14 +105,14 @@ export class AppComponent {
 			.then(data => data.json())
 			.then(songdata => {
 				const tracks = songdata?.album?.tracks?.track;
-				
+
 				if (!tracks || tracks.name) {
 					this.currentTracks = ["This author's tracks are unavailable."];
 					return;
-				}				
-				
+				}
+
 				this.currentTracks = [];
-				
+
 				for (const track of tracks)
 					this.currentTracks.push(track.name);
 			});

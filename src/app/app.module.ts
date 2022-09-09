@@ -4,15 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ArtistCardComponent } from './artist-card/artist-card.component';
+import { VulpesVulpesComponent } from './vulpes-vulpes/vulpes-vulpes.component';
+import { VulpesLagopusComponent } from './vulpes-lagopus/vulpes-lagopus.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-  		ArtistCardComponent
+  		ArtistCardComponent,
+		VulpesVulpesComponent,
+		VulpesLagopusComponent
 	],
 	imports: [
 		BrowserModule,
-		FormsModule
+		FormsModule,
+  AppRoutingModule,
+
 	],
 	providers: [],
 	bootstrap: [AppComponent]
