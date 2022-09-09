@@ -1,18 +1,21 @@
 <header>
 	<img src="./assets/logo.png" alt="JuliePro's logo">
-	<h1>JuliePro&trade; Music</h1>
+	<h1>
+		JuliePro&trade; Music
+		<div style="font-size: 10px">The best tunes. Limitless potential.</div>
+	</h1>
 	<h2>Explore your potential. Discover the JuliePro&trade; signature collection.</h2>
 </header>
 
 <main>
-	<h2>Our Artists</h2>
-
 	<aside>
 		<h3>Search</h3>
 		<div>
 			<input type="text" placeholder="Search for artist..." [(ngModel)]="query" />
 			<button (click)="getArtist(query)">Search</button>
 		</div>
+
+		<hr>
 
 		<h3>Fauxes</h3>
 		<div>

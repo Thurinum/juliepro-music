@@ -7,13 +7,15 @@ import { ArtistCardComponent } from './artist-card/artist-card.component';
 import { VulpesVulpesComponent } from './vulpes-vulpes/vulpes-vulpes.component';
 import { VulpesLagopusComponent } from './vulpes-lagopus/vulpes-lagopus.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppModalDialogComponent } from './app-modal-dialog/app-modal-dialog.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
   		ArtistCardComponent,
 		VulpesVulpesComponent,
-		VulpesLagopusComponent
+		VulpesLagopusComponent,
+  AppModalDialogComponent
 	],
 	imports: [
 		BrowserModule,
